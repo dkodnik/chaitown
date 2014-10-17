@@ -102,6 +102,48 @@
     </div>
   </div>
 </div>
+<!-- Окно оплата через PayPal -->
+<div class="modal fade" id="modalAct4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="color:#666;text-align:left;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Оплата через PayPal</h4>
+      </div>
+      <div class="modal-body">
+
+        <!-- код кнопки с paypal -->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="6LVBK3BM8G5JN">
+            <table>
+                <tr><td><input type="hidden" name="on0" value="Сумма">Сумма</td></tr><tr><td><select name="os0">
+                    <option value="Оплата">Оплата 100,00 RUB</option>
+                    <option value="Оплата">Оплата 200,00 RUB</option>
+                    <option value="Оплата">Оплата 300,00 RUB</option>
+                    <option value="Оплата">Оплата 400,00 RUB</option>
+                    <option value="Оплата">Оплата 500,00 RUB</option>
+                    <option value="Оплата">Оплата 600,00 RUB</option>
+                    <option value="Оплата">Оплата 700,00 RUB</option>
+                    <option value="Оплата">Оплата 800,00 RUB</option>
+                    <option value="Оплата">Оплата 900,00 RUB</option>
+                    <option value="Оплата">Оплата 1 000,00 RUB</option>
+                </select> </td></tr>
+                <tr><td><input type="hidden" name="on1" value="Уточните, за что оплата:">Уточните, за что оплата:</td></tr><tr><td><input type="text" name="os1" maxlength="200"></td></tr>
+            </table>
+            <input type="hidden" name="currency_code" value="RUB">
+            <input type="image" src="https://www.paypalobjects.com/ru_RU/RU/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal — более безопасный и легкий способ оплаты через Интернет!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
+        </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -337,21 +379,24 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
 
-      <script>
+    <script>
+
     var loc = window.location.hash.replace("#","");
     if(loc == "chaidai") {
         $('#modalAct2').modal('show');
+    } else if(loc == "paypal") {
+        $('#modalAct4').modal('show');
     }
 
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-49949686-1', 'чай-таун.рф');
-  ga('send', 'pageview');
-  
-  </script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-49949686-1', 'чай-таун.рф');
+    ga('send', 'pageview');
+
+    </script>
 
 </body>
 
